@@ -1,0 +1,17 @@
+<div class="myfooter">
+        <p class="text-center"><a href="http://weibo.com/royaljay">@筱筱汀</a></p>
+    </div>
+	<script src="jquery-2.1.1.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script>   
+    $("#myModal").on("show.bs.modal",function(e) {
+        var button = $(e.relatedTarget)
+        var recipient = button.data("whatever");
+        var modal = $(this);
+        modal.find(".modal-title").text(recipient);
+        modal.find(".modal-body input").val(recipient)
+    })
+    
+</script>	
+</body>
+</html>

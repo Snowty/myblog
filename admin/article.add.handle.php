@@ -1,6 +1,11 @@
 ﻿<?php 
 	session_start();
-	require_once('../connect.php');
+    if($_SESSION['adminName']!='xuege'){
+    Header("HTTP/1.1 303 Please login before add article"); 
+    Header("Location: ../article.list.php"); 
+    exit;
+    }
+	require_once('../include/connect.php');
 	//传递过来的信息入库,入库前对所有信息校验
 	//print_r($_POST);
 	if(!(isset($_POST['title'])&&(!empty($_POST['title'])))){//变量是否存在，并且非空

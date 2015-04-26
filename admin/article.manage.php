@@ -1,6 +1,11 @@
 ﻿<?php 
 	session_start();
-	require_once('../connect.php');
+	if($_SESSION['adminName']!='xuege'){
+	Header("HTTP/1.1 303 Please login before add article"); 
+	Header("Location: ../article.list.php"); 
+	exit;
+	}
+	require_once('../include/connect.php');
 	$sql = "select * from article order by dateline desc";
 	$query = mysql_query($sql);
 	if($query && mysql_num_rows($query)){ //没出错并且结果条数>0
@@ -18,8 +23,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>管理文章</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="myheading">
@@ -27,12 +32,12 @@
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="1.jpg" style="width: 150px"
+                        <img src="../static/1.jpg" style="width: 150px"
                     </a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li ><a href="../article.list.php">浏览文章</a> </li>
+                        <li ><a href="article.list.php">浏览文章</a> </li>
                         <li ><a href="article.add.php">添加文章</a> </li>
 						<li class="active"><a href="article.manage.php">管理文章</a> </li>
                     </ul>
@@ -82,15 +87,5 @@
 		</table>	
   
     </div>
-		<div class="myfooter">
-            <p class="text-center"><a href="http://weibo.com/royaljay">@筱筱汀</a></p>
-        </div>
-	<script src="jquery-2.1.1.min.js"></script>
-	<script src="bootstrap.min.js"></script>
-	<script>
-    $(".navbar-nav a").click(function(e){
-        $(this).tab("show");
-    })
-	</script>
-</body>
-</html>
+	<?php	require_once("../include/footer.html");?>
+	

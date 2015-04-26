@@ -1,5 +1,5 @@
 <?php 
-	require_once('connect.php');
+	require_once('include/connect.php');
 	$key = $_GET['key'];
 	$sql = "select * from article where title like '%$key%' order by dateline desc";
 	$query = mysql_query($sql);
@@ -14,7 +14,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>筱筱汀的碎碎念</title>
-<link href="bootstrap.min.css" rel="stylesheet" >
+<link href="static/bootstrap.min.css" rel="stylesheet" >
 </head>
 <body>
 	<div class="myheading">
@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="1.jpg" style="width: 150px">
+                        <img src="static/1.jpg" style="width: 150px">
                     </a>
                 </div>
 				<ul class="nav navbar-nav">
@@ -72,8 +72,5 @@
 	</div>
 	
 </div>
-<div class="myfooter">
-        <p class="text-center"><a href="http://weibo.com/royaljay">@筱筱汀</a></p>
-    </div>
-</body>
-</html>
+<? require_once("include/footer.html");
+?>

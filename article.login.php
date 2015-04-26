@@ -1,6 +1,6 @@
 ﻿<?php
     session_start();
-	require_once('connect.php');
+	require_once('include/connect.php');
 	$num="";
 	for($i=0;$i<4;$i++){
 		$num .= dechex(rand(0,15));
@@ -11,10 +11,17 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Sign in</title>
-	<link href="bootstrap.min.css" rel="stylesheet" >
+	<link href="static/bootstrap.min.css" rel="stylesheet" >
 </head>
 <body>
-	<div class="container">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="container col-md-3 col-md-offset-4" >
 	<form id="login" name="login" method="post" action="article.login_check.php" onSubmit="">
 		<div class="form-group">
 			<label class="control-label">username</label>

@@ -1,6 +1,11 @@
 ﻿<?php
 	session_start();
-	require_once('../connect.php');
+	if($_SESSION['adminName']!='xuege'){
+	Header("HTTP/1.1 303 Please login before add article"); 
+	Header("Location: ../article.list.php"); 
+	exit;
+}
+	require_once('../include/connect.php');
 	//读取旧信息
 	$id=$_GET['id'];
 	$query = mysql_query("select * from article where id=$id");
@@ -13,8 +18,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>修改文章</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/style.css" rel="stylesheet">
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>
 <body>
@@ -23,7 +28,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="1.jpg" style="width: 150px"
+                        <img src="../static/1.jpg" style="width: 150px"
                     </a>
                 </div>
                 <div class="collapse navbar-collapse">
@@ -32,7 +37,7 @@
                         <li ><a href="article.add.php">添加文章</a> </li>
 						<li ><a href="article.manage.php">管理文章</a> </li>
                     </ul>
-                    <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+                    <a class="btn btn-default navbar-btn navbar-right pull-right" href="../article.logout.php">Sign out</a>
                     <form class="navbar-form navbar-right" role="search">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="输入搜索内容">
@@ -85,15 +90,4 @@
 
             </div>
     </div>
-    <div class="myfooter">
-            <p class="text-center"><a href="http://weibo.com/royaljay">@筱筱汀</a>Mail:xsnowting@gmail.com</p>
-        </div>
-<script src="jquery-2.1.1.min.js"></script>
-<script src="bootstrap.min.js"></script>
-<script>
-    $(".navbar-nav a").click(function(e){
-        $(this).tab("show");
-    })
-</script>
-</body>
-</html>
+   	<?php	require_once("../include/footer.html");?> 
