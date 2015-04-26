@@ -1,0 +1,22 @@
+mysql> describe article;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| title       | char(100)    | YES  |     | NULL    |                |
+| author      | char(50)     | YES  |     | NULL    |                |
+| description | varchar(255) | YES  |     | NULL    |                |
+| content     | text         | YES  |     | NULL    |                |
+| dateline    | int(11)      | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.06 sec)
+
+mysql> describe admin;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(20)      | NO   | PRI | NULL    | auto_increment |
+| username | varchar(20)  | NO   |     | NULL    |                |
+| password | varchar(100) | NO   |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+3 rows in set (0.03 sec)
