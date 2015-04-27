@@ -1,5 +1,5 @@
 <?php 
-	require_once('include/connect.php');
+	require_once('../include/connect.php');
 	$id = intval($_GET['id']);     //防止SQL注入
 	$sql = "select * from article where id=$id";
 	$query = mysql_query($sql);
@@ -15,7 +15,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>筱筱汀的碎碎念</title>
-<link href="static/bootstrap.min.css" rel="stylesheet" >
+<link href="../static/bootstrap.min.css" rel="stylesheet" >
 </head>
 <body>
 	<div class="myheading">
@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="static/1.jpg" style="width: 150px">
+                        <img src="../static/1.jpg" style="width: 150px">
                     </a>
                 </div>
 				<div class="collapse navbar-collapse">
@@ -31,8 +31,8 @@
                         <li><a href="article.list.php">文章列表</a> </li>
                     </ul>
 				<div class="txet-right">
-					<a class="btn btn-default navbar-btn navbar-right pull-right" href="article.login.php">Sign in</a>
-                    <form class="navbar-form navbar-right" role="search" method="get" action="article.search.php">
+					<a class="btn btn-default navbar-btn navbar-right pull-right" href="../article.logout.php">Sign out</a>
+                    <form class="navbar-form navbar-right" role="search" method="get" action="../article.search.php">
                         <div class="form-group">
 							<label class="sr-only">search</label>
                             <input type="text" class="form-control" id="s" name="key" placeholder="输入搜索的文章名">
@@ -52,6 +52,6 @@
 			</div>
 		</div>
 	</div>
-	<? 
-	require_once("include/footer.html");
+	<?php
+		require_once("../include/footer.html");
 	?>

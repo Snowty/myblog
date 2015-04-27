@@ -1,10 +1,10 @@
 ﻿<?php 
 	session_start();
-if($_SESSION['adminName']!='xuege'){
-Header("HTTP/1.1 303 Please login before add article"); 
-Header("Location: ../article.list.php"); 
-exit;
-}
+	if($_SESSION['adminName']!='xuege'){
+		Header("HTTP/1.1 303 Please login before add article"); 
+		Header("Location: ../article.list.php"); 
+		exit;
+	}
 	require_once('../include/connect.php');
 	//传递过来的信息入库,入库前对所有信息校验
 	//print_r($_POST);
@@ -14,17 +14,15 @@ exit;
 	}
 	$id = $_POST['id'];
 	$title = $_POST['title'];
-	$author = $_POST['author'];
+	$firstTime = $_POST['firstTime'];
 	$description = $_POST['description'];
 	$content = $_POST['content'];
-	
 	$dateline = time();
-
-	$updatesql = "update article set title='$title',author='$author',description='$description',
+	$updatesql = "update article set title='$title',firstTime='$firstTime',description='$description',
 	                     content='$content',dateline=$dateline where id=$id ";
 	//echo $insertsql;
 	if(mysql_query($updatesql)){
-		echo "<script>alert('修改文章成功');window.location.href='../article.list.php'</script>";
+		echo "<script>alert('修改文章成功');window.location.href='article.list.php'</script>";
 	}else{
 		echo "<script>alert('修改文章失败');window.location.href='article.modify.php'</script>";
 	}

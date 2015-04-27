@@ -20,7 +20,7 @@ require_once("include/header.html");
 			foreach($data as $value){
 	?>
 	<div class="col-md-10">
-		<h1><?php echo $value['title']?></h1>
+		<h1><?php echo $value['title']?>&nbsp;<small><?php echo $value['firstTime']; ?></small></h1>
         <blockquote>
         <p><?php echo $value['description']?></p>
         </blockquote>

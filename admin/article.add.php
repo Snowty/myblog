@@ -48,44 +48,43 @@ exit;
     </div>
     <div class="mybody container">
     <h1 class="col-lg-offset-5">添加文章</h1>
-         
-<form class="form-horizontal" id="form1" name="form1" method="post" action="article.add.handle.php">
-  <div class="form-group">
-    <label for="title" class="col-sm-2 control-label">标题</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="title" name="title">
+        <form class="form-horizontal" id="form1" name="form1" method="post" action="article.add.handle.php">
+			<div class="form-group">
+				<label for="title" class="col-sm-2 control-label">标题</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="title" name="title">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="firstTime" class="col-sm-2 control-label">时间</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="firstTime" name ="firstTime" 
+					value="<?php date_default_timezone_set('Asia/shanghai'); echo date('Y-m-d H:i:s');  ?>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="description" class="col-sm-2 control-label">简介</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" rows="3" name="description" id="description"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="content">内容</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" rows="10" name="content" id="content"></textarea>
+					<script type="text/javascript">CKEDITOR.replace('content');</script>
+				</div>
+			</div>  
+			<div class="form-group">
+				<div class="col-sm-offset-9">
+					<button type="submit" class="btn btn-info">提 交</button>
+				</div>
+			</div>
+		</form>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="author" class="col-sm-2 control-label">作者</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="author" name ="author">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="description" class="col-sm-2 control-label">简介</label>
-    <div class="col-sm-8">
-      <textarea class="form-control" rows="3" name="description" id="description"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label" for="content">内容</label>
-    <div class="col-sm-8">
-	    <textarea class="form-control" rows="10" name="content" id="content"></textarea>
-        <script type="text/javascript">CKEDITOR.replace('content');</script>
-        
-    </div>
-  </div>  
-  
-  <div class="form-group">
-    <div class="col-sm-offset-9">
-      <button type="submit" class="btn btn-info">提 交</button>
-    </div>
-  </div>
-</form>
-                    
-                </div>
 
-            </div>
-    </div>
-    <?php	require_once("../include/footer.html");?>
+</div>
+   
+<?php	
+	require_once("../include/footer.html");
+?>

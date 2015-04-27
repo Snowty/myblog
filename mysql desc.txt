@@ -4,7 +4,7 @@ mysql> describe article;
 +-------------+--------------+------+-----+---------+----------------+
 | id          | int(11)      | NO   | PRI | NULL    | auto_increment |
 | title       | char(100)    | YES  |     | NULL    |                |
-| author      | char(50)     | YES  |     | NULL    |                |
+| firstTime   | timestamp    | YES  |     | NULL    |                |
 | description | varchar(255) | YES  |     | NULL    |                |
 | content     | text         | YES  |     | NULL    |                |
 | dateline    | int(11)      | YES  |     | NULL    |                |

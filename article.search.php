@@ -49,7 +49,7 @@
 <!-- start page -->
 <div class="container">
 	<!-- start content -->
-	<div class="col-md-3">
+	
 	<?php
 		if(empty($data)){	
 			echo "当前没有文章，请管理员在后台添加文章";
@@ -58,10 +58,10 @@
 	?>
 		<div class="col-md-9 col-md-offset-2">
 			<h1 ><?php echo $value['title']?></h1>
-			<div class="col-md-9 col-md-offset-2">
+			<div class="col-md-9">
 				<?php echo $value['description']?>
 			</div>
-			<div class="col-md-9 col-md-offset-2">
+			<div class="col-md-9">
 				<p><a href="article.show.php?id=<?php echo $value['id']?>" class="more">查看详细</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;</p>
 			</div>
 		</div>
@@ -69,7 +69,7 @@
 			}
 		}
 	?>
-	</div>
+	
 	
 </div>
 <? require_once("include/footer.html");

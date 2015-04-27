@@ -16,7 +16,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>添加文章</title>
+    <title>浏览文章</title>
     <link href="../static/bootstrap.min.css" rel="stylesheet">
     <link href="../static/style.css" rel="stylesheet">
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
@@ -51,7 +51,7 @@
         </nav>
     </div>
     <div class="mybody container">
-    <h1 class="col-lg-offset-5">添加文章</h1>
+    <h1 class="col-lg-offset-5">浏览文章</h1>
          
 <div class="container form-size line-hight">
 	<div class="col-md-10">
@@ -62,7 +62,7 @@
 			foreach($data as $value){
 	?>
 	<div class="col-md-10">
-		<h1><?php echo $value['title']?></h1>
+		<h1><?php echo $value['title']?>&nbsp;<small><?php echo $value['firstTime']; ?></small></h1>
         <blockquote>
         <p><?php echo $value['description']?></p>
         </blockquote>
